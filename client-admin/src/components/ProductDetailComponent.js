@@ -162,28 +162,23 @@ class ProductDetail extends Component {
       });
   };
 
-  apiGetProducts = () => {
+  apiGetProducts() {
     const config = { headers: { 'x-access-token': this.context.token } };
-    axios.get(`/api/admin/products?page=${curPage}`, config)
-      .then((res) => {
-        const result = res.data;
-        updateProducts(result.products, result.noPages, result.curPage);
-        if (result.products.length === 0) {
-          const prevPage = curPage - 1;
-          axios.get(`/api/admin/products?page=${prevPage}`, config)
-            .then((res) => {
-              const result = res.data;
-              updateProducts(result.products, result.noPages, prevPage);
-            })
-            .catch((error) => {
-              console.error('Error getting products:', error);
+   axios.get('/api/admin/products?page=' + this.props.curPage, config).then((res) => {
+      const result = res.data;
+      this.props.updateProducts(result.products, result.noPages, result.curPage);
+             if (result.products.length !== 0) {
+        this.props.updateProducts(result.products, result.noPages, result.curPage);
+      } else {
+        const curPage = this.props.curPage - 1;
+        axios.get('/api/admin/products?page=' + curPage, config).then((res) => {
+          const result = res.data;
+          this.props.updateProducts(result.products, result.noPages, curPage);
             });
         }
-      })
-      .catch((error) => {
-        console.error('Error getting products:', error);
+      
       });
-  };
+  }
 
   apiPutProduct = (id, prod) => {
     const config = { headers: { 'x-access-token': this.context.token } };
