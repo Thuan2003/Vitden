@@ -73,8 +73,7 @@ class ProductDetail extends Component {
     const price = parseInt(this.state.txtPrice);
     const category = this.state.cmbCategory;
     const image = this.state.imgProduct.replace(/^data:image\/[a-z]+;base64,/, ''); // remove "data:image/...;base64,"
-    if (name && price && category && image) {
-const prod = { name: name, price: price, category: category, image: image };
+    if (name && price && category && image) {const prod = { name: name, price: price, category: category, image: image };
       this.apiPostProduct(prod);
     } else {
       alert('Please input name and price and category and image');
@@ -168,103 +167,7 @@ btnUpdateClick(e) {
     this.apiGetCategories();
   }
   componentDidUpdate(prevProps) {
-    if (this.props.item !== prevProps.item) {
-      const prod = { name: name, price: price, category: category, image: image };
-      this.apiPostProduct(prod);
-    } else {
-      alert('Please input name and price and category and image');
-    }
-  }
-  // apis
-  apiPostProduct(prod) {
-    const config = { headers: { 'x-access-token': this.context.token } };
-    axios.post('/api/admin/products', prod, config).then((res) => {
-      const result = res.data;
-      if (result) {
-        alert('OK BABY!');
-        this.apiGetProducts();
-      } else {
-        alert('SORRY BABY!');
-      }
-    });
-  }
-  apiGetProducts() {
-    const config = { headers: { 'x-access-token': this.context.token } };
-    axios.get('/api/admin/products?page=' + this.props.curPage, config).then((res) => {
-      const result = res.data;
-      this.props.updateProducts(result.products, result.noPages, result.curPage);
-      if (result.products.length !== 0) {
-        this.props.updateProducts(result.products, result.noPages, result.curPage);
-      } else {
-        const curPage = this.props.curPage - 1;
-        axios.get('/api/admin/products?page=' + curPage, config).then((res) => {
-          const result = res.data;
-          this.props.updateProducts(result.products, result.noPages, curPage);
-        });
-      }
-    
-    });
-}
-// event-handlers
-btnUpdateClick(e) {
-    e.preventDefault();
-    const id = this.state.txtID;
-    const name = this.state.txtName;
-    const price = parseInt(this.state.txtPrice);
-    const category = this.state.cmbCategory;
-    const image = this.state.imgProduct.replace(/^data:image\/[a-z]+;base64,/, ''); // remove "data:image/...;base64,"
-    if (id && name && price && category && image) {
-      const prod = { name: name, price: price, category: category, image: image };
-      this.apiPutProduct(id, prod);
-    } else {
-      alert('Please input id and name and price and category and image');
-    }
-  }
-  // apis
-  apiPutProduct(id, prod) {
-    const config = { headers: { 'x-access-token': this.context.token } };
-    axios.put('/api/admin/products/' + id, prod, config).then((res) => {
-      const result = res.data;
-      if (result) {
-        alert('OK BABY!');
-        this.apiGetProducts();
-      } else {
-        alert('SORRY BABY!');
-      }
-    });
-  }
-  // event-handlers
-  btnDeleteClick(e) {
-    e.preventDefault();
-    if (window.confirm('ARE YOU SURE?')) {
-      const id = this.state.txtID;
-      if (id) {
-        this.apiDeleteProduct(id);
-      } else {
-        alert('Please input id');
-      }
-    }
-  }
-  // apis
-  apiDeleteProduct(id) {
-    const config = { headers: { 'x-access-token': this.context.token } };
-    axios.delete('/api/admin/products/' + id, config).then((res) => {
-      const result = res.data;
-      if (result) {
-        alert('OK BABY!');
-        this.apiGetProducts();
-      } else {
-        alert('SORRY BABY!');
-      }
-    });
-  }
-
-  componentDidMount() {
-    this.apiGetCategories();
-  }
-  componentDidUpdate(prevProps) {
-    if (this.props.item !== prevProps.item) {
-      this.setState({
+    if (this.props.item !== prevProps.item) {this.setState({
             txtID: this.props.item._id,
             txtName: this.props.item.name,
             txtPrice: this.props.item.price,
