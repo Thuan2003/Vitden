@@ -1,0 +1,64 @@
+/* Inform.css */
+
+body {
+    margin: 0; /* Remove default body margin */
+  }
+  
+  .border-bottom {
+    border-bottom: 2px solid #ddd;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #00796b; /* Change to your preferred sea-like background color */
+    border-top-left-radius: 10px; /* Adjust the radius as needed */
+    border-top-right-radius: 10px; /* Adjust the radius as needed */
+  }
+  
+  .float-left,
+  .float-right {
+    margin: 0 auto; /* Center the content */
+    max-width: 1200px; /* Set a maximum width for the content */
+  }
+  
+  .float-left {
+    float: left;
+  }
+  
+  .float-right {
+    float: right;
+  }
+  
+  /* Navigation links styling */
+  .float-left a,
+  .float-right a {
+    text-decoration: none;
+    margin-right: 15px;
+    color: #fff; /* Change to your preferred text color */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .float-left a:hover,
+  .float-right a:hover {
+    color: #00acc1; /* Change to your preferred hover color */
+  }
+  
+  /* Logout link styling */
+  .float-left a.logout-link:hover {
+    color: #d32f2f; /* Change to your preferred logout hover color */
+  }
+  
+  /* Additional styling for emphasis */
+  .float-right b {
+    color: #fff; /* Change to your preferred text color */
+  }
+  /* Inform.css */
+
+/* ... (other styles) */
+
+.float-left div {
+  padding-left: 0.6cm;
+}
+.float-right{
+  padding-right: 0.6cm;
+}
+/* ... (other styles) */

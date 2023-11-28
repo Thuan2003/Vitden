@@ -1,0 +1,48 @@
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #00796b;
+  color: white;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.menu-item {
+  margin-right: 20px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item a:hover {
+  background-color: #555;
+}
+
+.float-right {
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #00796b; /* Change this to your desired color */
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #005a4e; /* Change this to your desired hover color */
+}
