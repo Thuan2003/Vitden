@@ -6,7 +6,7 @@
 }
 
 h2 {
-  color: #3498db; /* Heading color */
+  color: #db3474; /* Heading color */
 }
 
 form {
@@ -35,7 +35,7 @@ form {
   padding: 20px;
   border: 2px solid #e74c3c; /* Red border color */
   border-radius: 10px; /* Rounded corners */
-  background-color: #2ecc71; /* Green background color */
+  background-color: #cc2e48; /* Green background color */
 }
 
 table {
@@ -63,11 +63,11 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="tel"]:focus,
 input[type="email"]:focus {
-  border-color: #3498db; /* Highlight border color on focus */
+  border-color: #db3463; /* Highlight border color on focus */
 }
 
 input[type="submit"] {
-  background-color: #3498db;
+  background-color: #f0505c;
   color: #fff;
   padding: 15px;
   border: none;
@@ -77,8 +77,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #2980b9; /* Darker color on hover */
+  background-color: rgb(244, 55, 124); /* Darker color on hover */
 }
+
+
+
 
 /* Responsive styles */
 @media (max-width: 600px) {
