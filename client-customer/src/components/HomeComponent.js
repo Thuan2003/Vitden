@@ -1,8 +1,11 @@
-// Home.js
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import styles from './Home.module.css';
+import SimpleSlider from './SimpleSlider'; // Import the SimpleSlider component
 
 class Home extends Component {
   constructor(props) {
@@ -54,10 +57,20 @@ class Home extends Component {
       </div>
     ));
 
+    // Settings for the Slider component
+    const sliderSettings = {
+      dots: true,
+      infinite: true,
+      speed: 200,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+    };
+
     return (
       <div className={styles.productSection}>
         <h2 className={styles.sectionTitle}>{title}</h2>
-        <div className={styles.productContainer}>{productItems}</div>
+        {/* Wrap productItems in Slider component */}
+        <Slider {...sliderSettings}>{productItems}</Slider>
       </div>
     );
   }
@@ -65,6 +78,9 @@ class Home extends Component {
   render() {
     return (
       <div>
+        {/* Replace or add the following line to include the SimpleSlider component */}
+        <SimpleSlider />
+
         {this.renderProductSection('NEW PRODUCTS', this.state.newprods)}
         {this.renderProductSection('HOT PRODUCTS', this.state.hotprods)}
 
