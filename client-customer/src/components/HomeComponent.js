@@ -81,8 +81,8 @@ class Home extends Component {
         {/* Replace or add the following line to include the SimpleSlider component */}
         <SimpleSlider />
 
-        {this.renderProductSection('NEW PRODUCTS', this.state.newprods)}
-        {this.renderProductSection('HOT PRODUCTS', this.state.hotprods)}
+          {this.renderProductSection('MẪU MỚI', this.state.newprods)}
+        {this.renderProductSection('SẢN PHẨM ĐƯỢC ƯA CHUỘNG', this.state.hotprods)}
 
         {/* Animated Bottom Border */}
         <div className="bottom-border"></div>
