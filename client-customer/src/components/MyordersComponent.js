@@ -5,7 +5,6 @@ import MyContext from '../contexts/MyContext';
 
 class Myorders extends Component {
   static contextType = MyContext; // using this.context to access global state
-
   constructor(props) {
     super(props);
     this.state = {
@@ -13,26 +12,8 @@ class Myorders extends Component {
       order: null
     };
   }
-
   render() {
-    if (this.context.token === '') return <Navigate replace to="/login" />;
-
-    const containerStyle = {
-      textAlign: 'center',
-      border: '2px solid #3498db',
-      borderRadius: '10px',
-      padding: '20px',
-      boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-      backgroundColor: '#fff',
-      maxWidth: '800px', // Adjust the maximum width as needed
-      margin: 'auto', // Center the container
-      marginBottom: '20px', // Add some margin at the bottom
-    };
-
-    const headingStyle = {
-      color: '#3498db'
-    };
-
+    if (this.context.token === '') return (<Navigate replace to='/login' />);
     const orders = this.state.orders.map((item) => {
       return (
         <tr key={item._id} className="datatable" onClick={() => this.trItemClick(item)}>
@@ -45,7 +26,6 @@ class Myorders extends Component {
         </tr>
       );
     });
-
     if (this.state.order) {
       var items = this.state.order.items.map((item, index) => {
         return (
@@ -61,27 +41,27 @@ class Myorders extends Component {
         );
       });
     }
-
     return (
-      <div style={containerStyle}>
-        <h2 style={headingStyle}>ORDER LIST</h2>
-        <table className="datatable" border="1">
-          <tbody>
-            <tr className="datatable">
-              <th>ID</th>
-              <th>Creation date</th>
-              <th>Cust.name</th>
-              <th>Cust.phone</th>
-              <th>Total</th>
-              <th>Status</th>
-            </tr>
-            {orders}
-          </tbody>
-        </table>
-
+      <div>
+        <div className="align-center">
+          <h2 className="text-center">ORDER LIST</h2>
+          <table className="datatable" border="1">
+            <tbody>
+              <tr className="datatable">
+                <th>ID</th>
+                <th>Creation date</th>
+                <th>Cust.name</th>
+                <th>Cust.phone</th>
+                <th>Total</th>
+                <th>Status</th>
+              </tr>
+              {orders}
+            </tbody>
+          </table>
+        </div>
         {this.state.order ?
-          <div style={containerStyle}>
-            <h2 style={headingStyle}>ORDER DETAIL</h2>
+          <div className="align-center">
+            <h2 className="text-center">ORDER DETAIL</h2>
             <table className="datatable" border="1">
               <tbody>
                 <tr className="datatable">
@@ -101,19 +81,16 @@ class Myorders extends Component {
       </div>
     );
   }
-
   componentDidMount() {
     if (this.context.customer) {
       const cid = this.context.customer._id;
       this.apiGetOrdersByCustID(cid);
     }
   }
-
   // event-handlers
   trItemClick(item) {
     this.setState({ order: item });
   }
-
   // apis
   apiGetOrdersByCustID(cid) {
     const config = { headers: { 'x-access-token': this.context.token } };
@@ -123,5 +100,4 @@ class Myorders extends Component {
     });
   }
 }
-
 export default Myorders;
