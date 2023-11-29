@@ -1,0 +1,11 @@
+/* Menu.css */
+
+/* ... (other styles) */
+
+.menu li.home-link {
+    padding-left: 0.8cm;
+    line-height: 2; /* Adjust this value to vertically center the text */
+  }
+  
+  /* ... (other styles) */
+  
