@@ -16,12 +16,12 @@
 }
 
 .datatable th {
-  background-color: #00796b;
+  background-color: rgb(246, 100, 124);
   color: white;
 }
 
 .datatable tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #ff4a4a;
 }
 
 .link {
