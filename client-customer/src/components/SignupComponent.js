@@ -17,17 +17,17 @@ class Signup extends Component {
   render() {
     const containerStyle = {
       textAlign: 'center',
-      border: '2px solid #3498db', // Border color
+      border: '2px solid #bf1212', // Border color
       borderRadius: '10px',
-      padding: '10px', // Adjusted padding
-      boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', // Add a subtle shadow
-      backgroundColor: '#fff',
-      maxWidth: '300px', // Adjusted maximum width
+      padding: '20px', // Adjusted padding
+      boxShadow: '0 0 10px rgb(244, 55, 124)', // Add a subtle shadow
+      backgroundColor: 'rgb(253, 195, 205, 0.68)',
+      maxWidth: '450px', // Adjusted maximum width
       margin: '0 auto', // Center the container
     };
 
     const headingStyle = {
-      color: '#3498db',
+      color: '#bf1212',
     };
 
     return (
@@ -97,7 +97,7 @@ class Signup extends Component {
                 </td>
               </tr>
               <tr>
-                <td></td>
+                <td>SIGN-UP</td>
                 <td>
                   <input
                     type="submit"
