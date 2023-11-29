@@ -8,7 +8,7 @@ body {
     border-bottom: 2px solid #ddd;
     padding: 10px;
     overflow: hidden;
-    background-color: #00796b; /* Change to your preferred sea-like background color */
+    background-color: rgb(244, 38, 110); /* Change to your preferred sea-like background color */
     border-top-left-radius: 10px; /* Adjust the radius as needed */
     border-top-right-radius: 10px; /* Adjust the radius as needed */
   }
