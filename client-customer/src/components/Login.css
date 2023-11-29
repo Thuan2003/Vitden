@@ -6,7 +6,7 @@
   }
   
   h2 {
-    color: #3498db; /* Heading color */
+    color: #db347a; /* Heading color */
   }
   
   form {
@@ -17,7 +17,7 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 2px solid #3498db; /* Border color */
+    border: 2px solid #db3453; /* Border color */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     background-color: #fff;
@@ -44,11 +44,11 @@
   
   input[type="text"]:focus,
   input[type="password"]:focus {
-    border-color: #3498db; /* Highlight border color on focus */
+    border-color: #db34d3; /* Highlight border color on focus */
   }
   
   input[type="submit"] {
-    background-color: #3498db;
+    background-color: #db3434;
     color: #fff;
     padding: 15px;
     border: none;
@@ -58,6 +58,6 @@
   }
   
   input[type="submit"]:hover {
-    background-color: #2980b9; /* Darker color on hover */
+    background-color: #b92952; /* Darker color on hover */
   }
   
