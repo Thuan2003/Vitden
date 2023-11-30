@@ -15,7 +15,7 @@ class Login extends Component {
       return (
         <div className="align-valign-center">
           <h2 className="text-center">ADMIN LOGIN</h2>
-          <img src="https://static2-images.vnncdn.net/files/publish/2023/2/26/iphone-15-ultra-194.gif" alt="Loading GIF" />
+          <img src="https://thubongthiennga.com/uploads/shops/08-2019/5702017e0339a9251fd3ac17963574d7.gif" alt="Loading GIF" />
           <form>
             <table className="align-center">
               <tbody>
